@@ -215,6 +215,13 @@ class Enigma:
 
         encrypted = []
         for char in message:
+            # Skip non-alphabetic characters (e.g., numbers, punctuation) - they are not processed by Enigma
+            # and are added to the output unchanged. This maintains the original non-alphabetic characters
+            # in their positions while only encrypting letters.
+            if not char.isalpha():
+                encrypted.append(char)
+                continue
+
             # Advance rotors before processing each character
             self.__move_rotor()
 

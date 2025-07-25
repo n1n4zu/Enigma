@@ -7,7 +7,9 @@ class TestEnigma(unittest.TestCase):
         initial_settings = 'NFC'
         ring_settings = 'GYZ'
         notch_settings = 'DFR'
-        test_message = 'TESTMESSAGE'
+        test_message = 'TEST MESSAGE - 123,!342'
+        test_message = test_message.split()
+        test_message = ''.join(test_message)
 
         print("\n=== Starting Enigma Test ===")
         print(f"Initial settings: {initial_settings}")
